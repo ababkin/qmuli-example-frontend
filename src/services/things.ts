@@ -11,7 +11,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class ThingsService {
 
-  private thingsApiUrl = 'https://gliqqtz1pi.execute-api.us-east-1.amazonaws.com/v1/things';
+  private thingsApiUrl = 'https://sfvkiwib24.execute-api.us-east-1.amazonaws.com/v1/things';
 
   constructor(private http: Http) {  }
 
@@ -43,7 +43,7 @@ export class ThingsService {
   }
 
   put(id: string, thing: Thing): Observable<{}> {
-    let url = this.thingsApiUrl + '/' + id;
+    let url = this.thingsApiUrl;
     return this.http.post(url, thing)
       .map((res:Response) => {
         let data = res.json();
